@@ -1,0 +1,15 @@
+{
+  "repo": "/Users/kairos/研一/tasks/UniGener/tmp/spark",
+  "worker_index": 0,
+  "worker_count": 1,
+  "executed_testcase_count": 1,
+  "compile_error_testcase_count": 1,
+  "compile_error_ratio": 100.0,
+  "runtime_error_testcase_count": 0,
+  "runtime_error_ratio": 0.0,
+  "runnable_testcase_count": 0,
+  "runnable_ratio": 0.0,
+  "average_line_coverage_percent": 0.0,
+  "average_branch_coverage_percent": 0.0,
+  "coverage_average_denominator": "runnable_testcase_count"
+}

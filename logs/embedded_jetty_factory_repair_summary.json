@@ -1,0 +1,96 @@
+{
+  "generated_test_path": "/Users/kairos/研一/tasks/UniGener/tmp/spark/src/test/java/unigener/UniGenerSparkEmbeddedserverJettyembeddedserverjettyEmbeddedJettyFactoryjavaEmbeddedJettyFactoryEmbeddedJettyFactory1c711032Test.java",
+  "iterations_count": 10,
+  "iterations": [
+    {
+      "iteration": 1,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_1.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 2,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_2.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 3,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_3.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 4,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_4.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 5,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_5.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 6,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_6.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 7,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_7.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 8,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_8.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 9,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_9.json",
+      "runtime_error_preview": ""
+    },
+    {
+      "iteration": 10,
+      "compile_passed": true,
+      "tests_passed": true,
+      "line_coverage_percent": 0.16,
+      "branch_coverage_percent": 0.0,
+      "sandbox_result_json": "/Users/kairos/研一/tasks/UniGener/tmp/spark/logs/sandbox_iterations/EmbeddedJettyFactory_iter_10.json",
+      "runtime_error_preview": ""
+    }
+  ]
+}

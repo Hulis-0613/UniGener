@@ -1,0 +1,30 @@
+{
+  "system_name": "UniGener",
+  "agents": {
+    "intent": {
+      "name": "intent-recognition-agent",
+      "inputs": ["focal_file", "focal_symbol", "language"],
+      "outputs": ["intent", "uncovered_symbols"]
+    },
+    "code_retrieval": {
+      "name": "code-retrieval-agent",
+      "mode": ["ast", "lsp", "hybrid"],
+      "inputs": ["unresolved_symbols", "import_queries", "language"],
+      "outputs": ["definitions", "imports", "variables", "lsp_definitions"]
+    },
+    "similar_case_retrieval": {
+      "name": "similar-test-retrieval-agent",
+      "inputs": ["focal_symbol", "intent", "language"],
+      "outputs": ["focal_test_pairs"]
+    },
+    "test_generation": {
+      "name": "unit-test-generation-agent",
+      "llm_provider": ["none", "openai", "ollama"],
+      "language": ["python", "java"],
+      "test_framework": ["pytest", "junit5"],
+      "max_iteration": 10,
+      "inputs": ["intent", "focal_test_pairs", "focal_file", "repo_root", "language", "test_framework", "repair_feedback"],
+      "outputs": ["few_shot_prompt", "generated_tests", "generated_test_path", "import_statement", "iteration_reports", "failure_reports_json", "coverage_backend"]
+    }
+  }
+}

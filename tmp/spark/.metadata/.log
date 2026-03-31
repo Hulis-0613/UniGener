@@ -1,0 +1,111 @@
+!SESSION 2025-03-07 18:25:32.121 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.12
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_SG
+Command-line arguments:  -data /home/binhang/binhang/DTester/data/repos/repos_with_test/spark
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.123
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.225
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.238
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.239
+!MESSAGE Initializing Java Language Server 1.37.0.202406271335
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.240
+!MESSAGE Started org.eclipse.m2e.core 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.751
+!MESSAGE ProjectRegistryRefreshJob finished 511ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.768
+!MESSAGE Started org.eclipse.buildship.core 16ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.818
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.818
+!MESSAGE Non-Static Commands: [java.project.import, java.project.changeImportedProjects, java.navigate.openTypeHierarchy, java.project.resolveStackTraceLocation, java.edit.handlePasteEvent, java.edit.stringFormatting, java.project.getSettings, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.createModuleInfo, java.vm.getAllInstalls, java.edit.organizeImports, java.project.refreshDiagnostics, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.updateSettings, java.project.getAll, java.reloadBundles, java.project.isTestFile, java.project.resolveText, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.smartSemicolonDetection, java.project.updateSourceAttachment, java.project.updateClassPaths, java.decompile, java.protobuf.generateSources, java.project.resolveSourceAttachment, java.project.updateJdk, java.project.addToSourcePath, java.completion.onDidSelect]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.832
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.837
+!MESSAGE RepositoryRegistryUpdateJob finished 10ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.877
+!MESSAGE Importing Maven project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.894
+!MESSAGE Workspace initialized in 68ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.904
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.915
+!MESSAGE Creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.920
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:33.921
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:34.089
+!MESSAGE Finished creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:37.132
+!MESSAGE Reconciled 101. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:37.745
+!MESSAGE begin problem for /Route.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:37.747
+!MESSAGE 1 problems reported for /Route.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:37.759
+!MESSAGE begin problem for /HttpMethod.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:37.759
+!MESSAGE 1 problems reported for /HttpMethod.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:37.760
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.419
+!MESSAGE begin problem for /ExceptionHandlerImpl.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.419
+!MESSAGE 1 problems reported for /ExceptionHandlerImpl.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.433
+!MESSAGE begin problem for /ResponseTransformerRouteImpl.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.434
+!MESSAGE 1 problems reported for /ResponseTransformerRouteImpl.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.447
+!MESSAGE begin problem for /WebSocketServletContextHandlerFactory.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.447
+!MESSAGE 1 problems reported for /WebSocketServletContextHandlerFactory.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.520
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.538
+!MESSAGE >> shutdown
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.540
+!MESSAGE >> exit
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.587
+!MESSAGE Shutdown received... waking up main thread
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2025-03-07 18:25:38.592
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is stopping:
