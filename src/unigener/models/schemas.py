@@ -9,6 +9,7 @@ class FocalMethodRequest:
     repo_root: Path
     focal_file: Path
     focal_symbol: str
+    session_id: str = ""
     language: str = "auto"
     test_framework: str = "auto"
     retrieval_mode: str = "hybrid"

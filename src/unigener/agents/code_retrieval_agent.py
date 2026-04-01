@@ -8,6 +8,7 @@ from pathlib import Path
 from unigener.models import CodeSnippet
 from unigener.retrievers.code_indexer import RepoCodeIndexer
 from unigener.retrievers.lsp_adapter import LSPCodeRetriever
+from unigener.utils import current_session_id, resolve_log_path
 
 
 class CodeRetrievalAgent:
@@ -79,6 +80,7 @@ class CodeRetrievalAgent:
         log_path = self._resolve_retrieval_log_path()
         record = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
+            "session_id": current_session_id(),
             "agent": self.name,
             "repo_root": str(repo_root),
             "mode": mode,
@@ -87,6 +89,8 @@ class CodeRetrievalAgent:
             "query_count": len(symbols),
             "ast_result_count": len(ast_results),
             "lsp_result_count": len(lsp_results),
+            "lsp_reason_stats": self._collect_reason_stats(lsp_results),
+            "java_lsp_backend": self._resolve_java_lsp_backend(language, lsp_results),
             "final_result_count": len(final_results),
             "results": [self._snippet_to_log_item(item) for item in final_results[:30]],
         }
@@ -108,9 +112,24 @@ class CodeRetrievalAgent:
             "source_preview": preview,
         }
 
+    def _collect_reason_stats(self, snippets: list[CodeSnippet]) -> dict[str, int]:
+        stats: dict[str, int] = {}
+        for item in snippets:
+            reason = item.reason
+            stats[reason] = stats.get(reason, 0) + 1
+        return stats
+
+    def _resolve_java_lsp_backend(self, language: str, lsp_results: list[CodeSnippet]) -> str:
+        if language != "java":
+            return "n/a"
+        if not lsp_results:
+            return "none"
+        if any(item.reason == "lsp-definition:jdtls" for item in lsp_results):
+            return "jdtls"
+        return "fallback"
+
     def _resolve_retrieval_log_path(self) -> Path:
         custom = os.getenv("UNIGENER_CODE_RETRIEVAL_LOG_PATH", "").strip()
         if custom:
             return Path(custom).expanduser()
-        root = Path(__file__).resolve().parents[3]
-        return root / "logs" / "code_retrieval.jsonl"
+        return resolve_log_path("code_retrieval.jsonl", category="agents")

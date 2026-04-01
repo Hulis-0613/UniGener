@@ -5,6 +5,7 @@ from pathlib import Path
 
 from unigener.models import FocalMethodRequest
 from unigener.pipeline import UniGenerOrchestrator
+from unigener.utils import ensure_session_id
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -20,16 +21,19 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output-tests-dir", default="tests")
     parser.add_argument("--no-auto-write", action="store_true")
     parser.add_argument("--no-auto-run", action="store_true")
+    parser.add_argument("--session-id", default="")
     return parser
 
 
 def main() -> None:
     args = build_parser().parse_args()
+    session_id = ensure_session_id(args.repo.resolve(), args.session_id)
     orchestrator = UniGenerOrchestrator()
     request = FocalMethodRequest(
         repo_root=args.repo.resolve(),
         focal_file=args.focal_file.resolve(),
         focal_symbol=args.focal_symbol,
+        session_id=session_id,
         language=args.language,
         test_framework=args.test_framework,
         retrieval_mode=args.retrieval_mode,
@@ -40,6 +44,7 @@ def main() -> None:
         output_tests_dir=args.output_tests_dir,
     )
     result = orchestrator.run(request)
+    print(f"=== Session ===\n{session_id}")
     print("=== Intent ===")
     print(result.intent)
     print("\n=== Code Context ===")

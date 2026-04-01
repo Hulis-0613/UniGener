@@ -8,6 +8,8 @@ from pathlib import Path
 from urllib import error
 from urllib import request
 
+from unigener.utils import current_session_id, resolve_log_path
+
 
 class LLMClient:
     def __init__(self) -> None:
@@ -216,6 +218,7 @@ class LLMClient:
             return
         record = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
+            "session_id": current_session_id(),
             "provider": provider,
             "model": model,
             "attempt_count": attempt_count,
@@ -239,5 +242,4 @@ class LLMClient:
         custom_path = os.getenv("UNIGENER_API_LOG_PATH", "").strip()
         if custom_path:
             return Path(custom_path).expanduser()
-        root = Path(__file__).resolve().parents[3]
-        return root / "logs" / "agent_api_calls.jsonl"
+        return resolve_log_path("agent_api_calls.jsonl", category="agents")

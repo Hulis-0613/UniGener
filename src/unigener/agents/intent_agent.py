@@ -9,6 +9,7 @@ from pathlib import Path
 
 from unigener.agents.llm_client import LLMClient
 from unigener.models import CodeSnippet, IntentResult
+from unigener.utils import current_session_id, resolve_log_path
 
 _PYTHON_BUILTINS = {
     "len",
@@ -437,6 +438,7 @@ class IntentRecognitionAgent:
         log_path = self._resolve_planning_log_path()
         record = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
+            "session_id": current_session_id(),
             "agent": self.name,
             "focal_file": str(focal_file),
             "focal_symbol": focal_symbol,
@@ -462,5 +464,4 @@ class IntentRecognitionAgent:
         custom = os.getenv("UNIGENER_INTENT_PLAN_LOG_PATH", "").strip()
         if custom:
             return Path(custom).expanduser()
-        root = Path(__file__).resolve().parents[3]
-        return root / "logs" / "intent_planning.jsonl"
+        return resolve_log_path("intent_planning.jsonl", category="agents")

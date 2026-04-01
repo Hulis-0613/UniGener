@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import ast
 import json
+import os
 import re
 from pathlib import Path
 
@@ -18,6 +19,7 @@ from unigener.pipeline.contracts import IntentToCodeRequest, SimilarCaseRequest
 from unigener.pipeline.java_test_sandbox import JavaTestSandbox
 from unigener.pipeline.test_runner import GeneratedTestRunner
 from unigener.pipeline.test_writer import GeneratedTestWriter
+from unigener.utils import ensure_session_id, resolve_log_path
 
 N_INTERATION = 10
 
@@ -36,6 +38,8 @@ class UniGenerOrchestrator:
         self,
         request: FocalMethodRequest,
     ) -> PipelineResult:
+        request.session_id = ensure_session_id(request.repo_root, request.session_id)
+        os.environ["UNIGENER_LOG_REPO_ROOT"] = str(request.repo_root.resolve())
         language = self._resolve_language(request)
         framework = self._resolve_framework(request, language)
         intent_result = self.intent_agent.run(
@@ -201,9 +205,12 @@ class UniGenerOrchestrator:
         request: FocalMethodRequest,
         iteration: int,
     ) -> TestExecutionResult:
-        logs_dir = request.repo_root / "logs" / "sandbox_iterations"
         safe_symbol = re.sub(r"[^A-Za-z0-9_]", "_", request.focal_symbol)
-        json_path = logs_dir / f"{safe_symbol}_iter_{iteration}.json"
+        json_path = resolve_log_path(
+            file_name=f"{safe_symbol}_iter_{iteration}.json",
+            category="sandbox_iterations",
+            repo_root=request.repo_root,
+        )
         sandbox_result = self.java_test_sandbox.run(
             repo_root=request.repo_root,
             output_json_path=json_path,
